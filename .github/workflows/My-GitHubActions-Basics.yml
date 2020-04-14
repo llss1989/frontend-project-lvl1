@@ -8,7 +8,11 @@
 #---------------------------------------------------------------------
 name: My-GitHubActions-Basics
 env:
+<<<<<<< HEAD
   APPLICATION_NAME    : "MyFlask"
+=======
+  make lint    : npx eslint
+>>>>>>> 29ad968a579b01eb1c36c0fb9bd2ac7a7f23710e
   DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 
 on: 
@@ -19,6 +23,7 @@ on:
 jobs:
   my_testing:
     runs-on: ubuntu-latest
+<<<<<<< HEAD
 
     steps:
     - name: Npm install
@@ -28,3 +33,18 @@ jobs:
   
   
   
+=======
+      - name: npm install, build
+        # Install and build project
+        run: |
+          make install
+          make build
+        # Add environment variables
+       
+    
+        
+      - name: Run linter
+        # Run Linter
+        run: |
+          make lint
+>>>>>>> 29ad968a579b01eb1c36c0fb9bd2ac7a7f23710e
