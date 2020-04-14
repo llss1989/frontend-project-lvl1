@@ -8,7 +8,7 @@
 #---------------------------------------------------------------------
 name: My-GitHubActions-Basics
 env:
-  make lint    : "npx eslint bin"
+  make lint    : npx eslint bin
   DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 
 on: 
