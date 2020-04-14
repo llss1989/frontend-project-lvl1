@@ -21,8 +21,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
     - name: testing Node
       run : node --version
+
+    - name: Git clone repositiry
+      uses : actions/checkout@v1
+      
     
    
   
