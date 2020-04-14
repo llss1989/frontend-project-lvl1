@@ -8,7 +8,7 @@
 #---------------------------------------------------------------------
 name: My-GitHubActions-Basics
 env:
-  make lint    : npx eslint bin
+  make lint    : npx eslint
   DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 
 on: 
@@ -19,7 +19,16 @@ on:
 jobs:
   my_testing:
     runs-on: ubuntu-latest
-
-    steps:
-    - name: start Eslint
-      run : make lint
+      - name: npm install, build
+        # Install and build project
+        run: |
+          make install
+          make build
+        # Add environment variables
+       
+    
+        
+      - name: Run linter
+        # Run Linter
+        run: |
+          make lint
