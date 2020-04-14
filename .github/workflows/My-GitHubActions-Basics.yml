@@ -7,13 +7,6 @@
 # Made by Denis Astahov ADV-IT Copyleft (c) 2019
 #---------------------------------------------------------------------
 name: My-GitHubActions-Basics
-env:
-<<<<<<< HEAD
-  APPLICATION_NAME    : "MyFlask"
-=======
-  make lint    : npx eslint
->>>>>>> 29ad968a579b01eb1c36c0fb9bd2ac7a7f23710e
-  DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ github.sha }}"
 
 on: 
   push:
