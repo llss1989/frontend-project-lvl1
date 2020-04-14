@@ -11,5 +11,7 @@
         "no-plusplus": "off",
         "eol-last": "off"
     },
-    "extends": ["airbnb/base"]
+    "extends": [
+        "airbnb/base"
+    ]
 }
