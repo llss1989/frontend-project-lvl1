@@ -28,8 +28,8 @@ jobs:
     - name: Git clone repositiry
       uses: actions/checkout@v1
      
-    - name: Git clone repositiry
-      run : make lint
+    - name: npm install
+      run : npm  install --save-dev
     
    
   
