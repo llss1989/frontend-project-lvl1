@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { evenFunction } from './src/index.js';
+import { evenFunction, engine } from './src/index.js';
 
-
-console.log(evenFunction());
+console.log(engine(evenFunction, `Answer "yes" if the number is even, otherwise answer "no"
+Question:`));

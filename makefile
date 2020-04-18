@@ -8,5 +8,9 @@ lint:
 	npx eslint bin
 start2:
 	node bin/brain-even.js
-testeven:
+even:
 	node bin/src/even-function.js
+engine:
+	node bin/src/engine.js
+index:
+	node bin/src/index.js
