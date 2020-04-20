@@ -1,8 +1,6 @@
 /* eslint-env es6 */
 import readlineSync from 'readline-sync';
-
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
+import { getRandomNumber } from '../index.js';
 
 
 export const evenFunction = (textOfQuestion) => {

@@ -10,7 +10,9 @@
         "import/extensions": "off",
         "import/prefer-default-export": "off",
         "no-plusplus": "off",
-        "eol-last": "off"
+        "eol-last": "off",
+        "max-len": "warn",
+        "import/no-cycle": "warn"
     },
     "extends": [
         "airbnb/base",
