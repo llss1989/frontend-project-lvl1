@@ -20,5 +20,6 @@ How play Brain-progression-game:
     https://asciinema.org/connect/601f32ea-485c-48a5-bd05-26051b65573a
 
 How play Brain-prime-game:
+    
     https://asciinema.org/connect/601f32ea-485c-48a5-bd05-26051b65573a
 
