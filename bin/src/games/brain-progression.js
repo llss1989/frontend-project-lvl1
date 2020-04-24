@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import { getCorrectAnswer, getProgression } from '../index.js';
+
+import readlineSync, { getCorrectAnswer, getProgression } from '../index.js';
 
 
 export const brainProgression = (textOfQuestion) => {

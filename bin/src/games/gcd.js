@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import { getRandomNumber, getCorrectAnswerForGcd } from '../index.js';
+
+import readlineSync, { getRandomNumber, getCorrectAnswerForGcd } from '../index.js';
 
 
 export const gcd = (textOfQuestion) => {

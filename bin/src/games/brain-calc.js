@@ -1,6 +1,5 @@
 
-import readlineSync from 'readline-sync';
-import { getRandomExpression } from '../index.js';
+import readlineSync, { getRandomExpression } from '../index.js';
 
 export const calcFunction = (textOfQuestion) => {
   const question = getRandomExpression();

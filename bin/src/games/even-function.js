@@ -1,6 +1,6 @@
 /* eslint-env es6 */
-import readlineSync from 'readline-sync';
-import { getRandomNumber } from '../index.js';
+
+import readlineSync, { getRandomNumber } from '../index.js';
 
 
 export const evenFunction = (textOfQuestion) => {

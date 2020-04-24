@@ -1,12 +1,9 @@
 /* eslint-disable import/extensions */
 /* eslint-env es6 */
 // eslint-disable-next-line import/prefer-default-export
-export { calcFunction } from './games/brain-calc.js';
-export { evenFunction } from './games/even-function.js';
-export { hello } from './hello.js';
-export { engine } from './engine.js';
-export { gcd } from './games/gcd.js';
-export { brainProgression } from './games/brain-progression.js';
+import readlineSync from 'readline-sync';
+
+export default readlineSync;
 
 
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -76,4 +73,18 @@ export const getCorrectAnswerForGcd = (question) => {
     }
   }
   return 1;
+};
+
+export const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
+  let i = 2;
+  while (i <= num / 2) {
+    if (num % i === 0) {
+      return false;
+    }
+    i += 1;
+  }
+  return true;
 };

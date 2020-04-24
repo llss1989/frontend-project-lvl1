@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { engine, gcd } from './src/index.js';
+import { gcd } from './src/games/gcd.js';
+import { engine } from './src/engine.js';
 
 const textOfQuestion = `Find the greatest common divisor of given numbers.
 Question: `;
