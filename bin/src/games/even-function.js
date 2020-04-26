@@ -3,7 +3,7 @@
 import readlineSync, { getRandomNumber } from '../index.js';
 
 
-export const evenFunction = (textOfQuestion) => {
+export const getArrForEvenGame = (textOfQuestion) => {
   const question = getRandomNumber(1, 100);
   const answer = readlineSync.question(`${textOfQuestion}:${question}`);
   const parityOfNumber = question % 2 === 0 ? 'even' : 'add';

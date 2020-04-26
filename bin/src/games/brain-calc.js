@@ -1,7 +1,7 @@
 
 import readlineSync, { getRandomExpression } from '../index.js';
 
-export const calcFunction = (textOfQuestion) => {
+export const getArrForCalcGame = (textOfQuestion) => {
   const question = getRandomExpression();
   const answer = readlineSync.question(`${textOfQuestion}: ${question[0]}`);
   const correctAnswer = question[1];

@@ -1,7 +1,7 @@
 import readlineSync, { getRandomNumber, isPrime } from '../index.js';
 
 
-export const brainGame = (textOfQuestion) => {
+export const getArrForPrimeGame = (textOfQuestion) => {
   const question = getRandomNumber(1, 100);
   const answer = readlineSync.question(`${textOfQuestion}: ${question}`);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
