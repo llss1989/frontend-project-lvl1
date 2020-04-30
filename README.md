@@ -1,6 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/llss1989/frontend-project-lvl1)
-
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/b738643ac4d698aa6935/maintainability)](https://codeclimate.com/github/llss1989/frontend-project-lvl1/maintainability)
 
 Status of Last Deployment:<br>
 <img src="https://github.com/llss1989/frontend-project-lvl1/workflows/My-GitHubActions-Basics/badge.svg?branch=master"><br>
