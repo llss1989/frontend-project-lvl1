@@ -5,14 +5,9 @@
         "es6": true
     },
     "rules": {
-        "space-in-parens": "warn",
         "no-console": "off",
-        "import/extensions": "off",
-        "import/prefer-default-export": "off",
-        "no-plusplus": "off",
-        "eol-last": "off",
-        "max-len": "warn",
-        "import/no-cycle": "warn"
+        "import/extensions": "warn",
+        "max-len": "warn"
     },
     "extends": [
         "airbnb/base",

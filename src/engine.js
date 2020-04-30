@@ -1,7 +1,7 @@
 import readlineSync from './index.js';
 
 
-export const engine = (funcOfGame, textQuestionOfGame) => {
+const engine = (funcOfGame, textQuestionOfGame) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
   console.log(`Hello, ${name}`);
@@ -20,3 +20,4 @@ export const engine = (funcOfGame, textQuestionOfGame) => {
   }
   console.log(`Congratulations, ${name}!`);
 };
+export default engine;
