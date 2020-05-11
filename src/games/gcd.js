@@ -1,8 +1,8 @@
 
 import readlineSync from '../index.js';
 import engine from '../engine.js';
+import getRandomNumber from '../getRandomNumber.js';
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const getCorrectAnswerForGcd = (question) => {
   const num1 = question[0];
@@ -21,11 +21,11 @@ const getArrForDivisorGame = (textOfQuestion) => {
   const answer = readlineSync.question(`${textOfQuestion}: ${question}`);
   const correctAnswer = getCorrectAnswerForGcd(question);
   const resultOfAnswer = correctAnswer === Number(answer) ? 'Correct' : 'Wrong';
-  const massiveWithResultGame = [question, answer, correctAnswer, resultOfAnswer];
-  return massiveWithResultGame;
+  const resultsOfGame = [question, answer, correctAnswer, resultOfAnswer];
+  return resultsOfGame;
 };
 
 const questionForGcdGame = `Find the greatest common divisor of given numbers.
 Question: `;
-const gcdGame = engine(getArrForDivisorGame, questionForGcdGame);
+const gcdGame = () => engine(getArrForDivisorGame, questionForGcdGame);
 export default gcdGame;

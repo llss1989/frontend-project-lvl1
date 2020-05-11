@@ -1,8 +1,8 @@
 
 import readlineSync from '../index.js';
 import engine from '../engine.js';
+import getRandomNumber from '../getRandomNumber.js';
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const findCell = (num) => num === '..';
 
@@ -45,11 +45,11 @@ const getArrForProgressionGame = (textOfQuestion) => {
   const answer = Number(readlineSync.question(`${textOfQuestion}: ${question}`));
   const correctAnswer = getCorrectAnswer(question);
   const resultOfAnswer = Number(answer) === correctAnswer ? 'Correct' : 'Wrong';
-  const massiveWithResultGame = [question, answer, correctAnswer, resultOfAnswer];
-  return massiveWithResultGame;
+  const resultsOfGame = [question, answer, correctAnswer, resultOfAnswer];
+  return resultsOfGame;
 };
 
 const questionForBrainProgression = `What number is missing in the progression?
 Question:`;
-const progressionGame = engine(getArrForProgressionGame, questionForBrainProgression);
+const progressionGame = () => engine(getArrForProgressionGame, questionForBrainProgression);
 export default progressionGame;

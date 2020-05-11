@@ -1,8 +1,8 @@
 
 import readlineSync from '../index.js';
 import engine from '../engine.js';
+import getRandomNumber from '../getRandomNumber.js';
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const getRandomExpression = () => {
   const symbol = getRandomNumber(1, 4);
@@ -27,13 +27,13 @@ const getArrForCalcGame = (textOfQuestion) => {
   const answer = readlineSync.question(`${textOfQuestion}: ${question[0]}`);
   const correctAnswer = question[1];
   const resultOfAnswer = Number(correctAnswer) === Number(answer) ? 'Correct' : 'Wrong';
-  const massiveWithResultGame = [question[1], Number(answer), Number(correctAnswer), resultOfAnswer];
-  return massiveWithResultGame;
+  const resultsOfGame = [question[1], Number(answer), Number(correctAnswer), resultOfAnswer];
+  return resultsOfGame;
 };
 
 const textQuestionOfCalcGame = `What is the result of the expression?
 Question:`;
 
-const calcGame = engine(getArrForCalcGame, textQuestionOfCalcGame);
+const calcGame = () => engine(getArrForCalcGame, textQuestionOfCalcGame);
 
 export default calcGame;

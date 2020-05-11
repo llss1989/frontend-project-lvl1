@@ -1,7 +1,7 @@
 import readlineSync from '../index.js';
 import engine from '../engine.js';
+import getRandomNumber from '../getRandomNumber.js';
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -22,12 +22,12 @@ const getArrForPrimeGame = (textOfQuestion) => {
   const answer = readlineSync.question(`${textOfQuestion}: ${question}`);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   const resultOfAnswer = answer === correctAnswer ? 'Correct' : 'Wrong';
-  const massiveWithResultGame = [question, answer, correctAnswer, resultOfAnswer];
-  return massiveWithResultGame;
+  const resultsOfGame = [question, answer, correctAnswer, resultOfAnswer];
+  return resultsOfGame;
 };
 
 const textQuestionOfCalcGame = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const primeGame = engine(getArrForPrimeGame, textQuestionOfCalcGame);
+const primeGame = () => engine(getArrForPrimeGame, textQuestionOfCalcGame);
 
 export default primeGame;

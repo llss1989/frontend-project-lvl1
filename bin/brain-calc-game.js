@@ -2,4 +2,4 @@
 
 import calcGame from '../src/games/brain-calc.js';
 
-console.log(calcGame);
+console.log(calcGame());

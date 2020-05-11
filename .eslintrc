@@ -6,8 +6,7 @@
     },
     "rules": {
         "no-console": "off",
-        "import/extensions": "warn",
-        "max-len": "warn"
+        "import/extensions": "warn"
     },
     "extends": [
         "airbnb/base",
