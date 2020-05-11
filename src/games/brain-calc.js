@@ -10,15 +10,19 @@ const getRandomExpression = () => {
   const operand2 = getRandomNumber(1, 100);
   const textOfExpAndCorrectAnswer = [0, 0];
 
-  if (symbol === 1) {
-    textOfExpAndCorrectAnswer[0] = `${operand1} - ${operand2}`;
-    textOfExpAndCorrectAnswer[1] = operand1 - operand2;
-  } else if (symbol === 2) {
-    textOfExpAndCorrectAnswer[0] = `${operand1} + ${operand2}`;
-    textOfExpAndCorrectAnswer[1] = operand1 + operand2;
-  } else if (symbol === 3) {
-    textOfExpAndCorrectAnswer[0] = `${operand1} * ${operand2}`;
-    textOfExpAndCorrectAnswer[1] = operand1 * operand2;
+  switch (symbol) {
+    case 1:
+      textOfExpAndCorrectAnswer[0] = `${operand1} - ${operand2}`;
+      textOfExpAndCorrectAnswer[1] = operand1 - operand2;
+      break;
+    case 2:
+      textOfExpAndCorrectAnswer[0] = `${operand1} + ${operand2}`;
+      textOfExpAndCorrectAnswer[1] = operand1 + operand2;
+      break;
+    case 3:
+      textOfExpAndCorrectAnswer[0] = `${operand1} * ${operand2}`;
+      textOfExpAndCorrectAnswer[1] = operand1 * operand2;
+      break;
   }
   return textOfExpAndCorrectAnswer;
 };
