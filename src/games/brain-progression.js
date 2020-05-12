@@ -8,8 +8,8 @@ const findCell = (num) => num === '..';
 
 const getProgression = () => {
   const result = [];
-  const step = getRandomNumber(1, 11);
-  const getHiddenCell = getRandomNumber(0, 10);
+  const step = getRandomNumber(1, 10);
+  const getHiddenCell = getRandomNumber(0, 9);
   let currentValue = 0;
   for (let i = 0; i < 10; i += 1) {
     if (getHiddenCell === i) {

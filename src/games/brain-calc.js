@@ -5,7 +5,7 @@ import getRandomNumber from '../getRandomNumber.js';
 
 
 const getRandomExpression = () => {
-  const symbol = getRandomNumber(1, 4);
+  const symbol = getRandomNumber(1, 3);
   const operand1 = getRandomNumber(1, 100);
   const operand2 = getRandomNumber(1, 100);
   const textOfExpAndCorrectAnswer = [0, 0];
@@ -23,6 +23,7 @@ const getRandomExpression = () => {
       textOfExpAndCorrectAnswer[0] = `${operand1} * ${operand2}`;
       textOfExpAndCorrectAnswer[1] = operand1 * operand2;
       break;
+      // no default
   }
   return textOfExpAndCorrectAnswer;
 };

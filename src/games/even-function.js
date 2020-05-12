@@ -15,6 +15,6 @@ const getArrForEvenGame = (textOfQuestion) => {
   return resultsOfGame;
 };
 const questionForBrainEven = `Answer "yes" if the number is even, otherwise answer "no"
-Question:`;
+Question`;
 const evenGame = () => engine(getArrForEvenGame, questionForBrainEven);
 export default evenGame;
