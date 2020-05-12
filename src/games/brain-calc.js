@@ -3,29 +3,36 @@ import readlineSync from '../index.js';
 import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
-
 const getRandomExpression = () => {
-  const symbol = getRandomNumber(1, 3);
+  const dictionaryOfSymbols = {
+    1: '-',
+    2: '+',
+    3: '*',
+  };
+  const symbol = dictionaryOfSymbols[getRandomNumber(1, 3)];
   const operand1 = getRandomNumber(1, 100);
   const operand2 = getRandomNumber(1, 100);
-  const textOfExpAndCorrectAnswer = [0, 0];
+  const textOfExpAndCorrectAnswer = {
+    textOfExpression: 0,
+    correctAnswer: 0,
+  };
 
   switch (symbol) {
-    case 1:
-      textOfExpAndCorrectAnswer[0] = `${operand1} - ${operand2}`;
-      textOfExpAndCorrectAnswer[1] = operand1 - operand2;
+    case '-':
+      textOfExpAndCorrectAnswer.textOfExpression = `${operand1} - ${operand2}`;
+      textOfExpAndCorrectAnswer.correctAnswer = operand1 - operand2;
       break;
-    case 2:
-      textOfExpAndCorrectAnswer[0] = `${operand1} + ${operand2}`;
-      textOfExpAndCorrectAnswer[1] = operand1 + operand2;
+    case '*':
+      textOfExpAndCorrectAnswer.textOfExpression = `${operand1} + ${operand2}`;
+      textOfExpAndCorrectAnswer.correctAnswer = operand1 + operand2;
       break;
-    case 3:
-      textOfExpAndCorrectAnswer[0] = `${operand1} * ${operand2}`;
-      textOfExpAndCorrectAnswer[1] = operand1 * operand2;
+    case '+':
+      textOfExpAndCorrectAnswer.textOfExpression = `${operand1} * ${operand2}`;
+      textOfExpAndCorrectAnswer.correctAnswer = operand1 * operand2;
       break;
       // no default
   }
-  return textOfExpAndCorrectAnswer;
+  return Object.values(textOfExpAndCorrectAnswer);
 };
 const getArrForCalcGame = (textOfQuestion) => {
   const question = getRandomExpression();
