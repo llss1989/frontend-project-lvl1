@@ -35,6 +35,7 @@ const getCorrectAnswer = (progressions) => {
       return start + diff * i;
     }
   }
+  return 'error';
 };
 
 const getArrForProgressionGame = (textOfQuestion) => {
