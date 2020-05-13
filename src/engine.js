@@ -6,14 +6,18 @@ const engine = (funcOfGame, textQuestionOfGame) => {
   const name = readlineSync.question('May I have your name?');
   console.log(`Hello, ${name}`);
 
+
   let counter = 0;
   while (counter < 3) {
     const questionAndAnswer = funcOfGame(textQuestionOfGame);
-    if (questionAndAnswer[3] === 'Wrong') {
+    const answer = questionAndAnswer[1];
+    const correctAnswer = questionAndAnswer[2];
+    const resultOfAnswer = questionAndAnswer[3];
+    if (resultOfAnswer === 'Wrong') {
       counter = 0;
-      console.log(`${questionAndAnswer[1]} is wrong answer ;(. Correct answer was ${questionAndAnswer[2]}  
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}  
       Let's try again, ${name}!`);
-    } else if (questionAndAnswer[3] === 'Correct') {
+    } else if (resultOfAnswer === 'Correct') {
       counter += 1;
       console.log('Correct!');
     }
@@ -21,3 +25,5 @@ const engine = (funcOfGame, textQuestionOfGame) => {
   console.log(`Congratulations, ${name}!`);
 };
 export default engine;
+
+// const resultsOfGame = [question, answer, correctAnswer, resultOfAnswer];

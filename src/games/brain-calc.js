@@ -36,10 +36,11 @@ const getRandomExpression = () => {
 };
 const getArrForCalcGame = (textOfQuestion) => {
   const question = getRandomExpression();
-  const answer = readlineSync.question(`${textOfQuestion}: ${question[0]}`);
+  const textOfExpression = question[0];
+  const answer = readlineSync.question(`${textOfQuestion}: ${textOfExpression}`);
   const correctAnswer = question[1];
   const resultOfAnswer = Number(correctAnswer) === Number(answer) ? 'Correct' : 'Wrong';
-  const resultsOfGame = [question[1], Number(answer), Number(correctAnswer), resultOfAnswer];
+  const resultsOfGame = [correctAnswer, Number(answer), Number(correctAnswer), resultOfAnswer];
   return resultsOfGame;
 };
 

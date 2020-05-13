@@ -4,48 +4,46 @@ import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 
-const findCell = (num) => num === '..';
-
 const getProgression = () => {
-  const result = [];
+  const dirtyProg = [];
+  const cleanProg = [];
   const step = getRandomNumber(1, 10);
   const getHiddenCell = getRandomNumber(0, 9);
   let currentValue = 0;
   for (let i = 0; i < 10; i += 1) {
     if (getHiddenCell === i) {
       currentValue += step;
-      result.push('..');
+      dirtyProg.push('..');
+      cleanProg.push(currentValue);
     } else {
       currentValue += step;
-      result.push(currentValue);
+      dirtyProg.push(currentValue);
+      cleanProg.push(currentValue);
     }
   }
-  return result;
+  return [dirtyProg, cleanProg];
 };
 
-const getCorrectAnswer = (progression) => {
-  const getIndexNeededNum = progression.findIndex(findCell);
-  let answer = 0;
-  let step = 0;
-  if (getIndexNeededNum === 0) {
-    step = progression[2] - progression[1];
-    answer = progression[1] - step;
-  } else if (getIndexNeededNum === 9) {
-    step = progression[8] - progression[7];
-    answer = progression[8] + step;
-  } else {
-    step = (progression[getIndexNeededNum + 1] - progression[getIndexNeededNum - 1]) / 2;
-    answer = progression[getIndexNeededNum - 1] + step;
+const getCorrectAnswer = (progressions) => {
+  const cleanProg = progressions[1];
+  const dirtyProg = progressions[0];
+  const diff = cleanProg[2] - cleanProg[1];
+  const size = cleanProg.length;
+  for (let i = 0; i < size; i += 1) {
+    if (dirtyProg[i] === '..') {
+      const start = cleanProg[0];
+      return start + diff * i;
+    }
   }
-  return answer;
 };
 
 const getArrForProgressionGame = (textOfQuestion) => {
-  const question = getProgression();
-  const answer = Number(readlineSync.question(`${textOfQuestion}: ${question}`));
-  const correctAnswer = getCorrectAnswer(question);
+  const progressions = getProgression();
+  const dirtyProg = progressions[0];
+  const answer = Number(readlineSync.question(`${textOfQuestion}: ${dirtyProg}`));
+  const correctAnswer = getCorrectAnswer(progressions);
   const resultOfAnswer = Number(answer) === correctAnswer ? 'Correct' : 'Wrong';
-  const resultsOfGame = [question, answer, correctAnswer, resultOfAnswer];
+  const resultsOfGame = [dirtyProg, answer, correctAnswer, resultOfAnswer];
   return resultsOfGame;
 };
 
