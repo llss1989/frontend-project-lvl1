@@ -1,6 +1,6 @@
 /* eslint-env es6 */
 
-import readlineSync from '../index.js';
+import readlineSync from 'readline-sync';
 import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 

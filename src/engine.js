@@ -1,4 +1,4 @@
-import readlineSync from './index.js';
+import readlineSync from 'readline-sync';
 
 
 const engine = (funcOfGame, textQuestionOfGame) => {
