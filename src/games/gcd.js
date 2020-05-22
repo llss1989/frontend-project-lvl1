@@ -5,7 +5,7 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const getDataForDivisorGame = () => {
   const textOfQuestion = `Find the greatest common divisor of given numbers.
-  Question: `;
+  Question`;
   const question = [getRandomNumber(1, 100), getRandomNumber(1, 100)];
   const num1 = question[0];
   const num2 = question[1];

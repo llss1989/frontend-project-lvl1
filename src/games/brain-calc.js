@@ -4,14 +4,14 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const getDataForCalcGame = () => {
   const textOfQuestion = `What is the result of the expression?
-  Question:`;
+  Question`;
   const dictionaryOfSymbols = ['+', '-', '*'];
   const symbol = dictionaryOfSymbols[getRandomNumber(0, 2)];
   const operand1 = getRandomNumber(1, 100);
   const operand2 = getRandomNumber(1, 100);
   const oper1ForMulti = getRandomNumber(1, 10);
   const oper2ForMulti = getRandomNumber(1, 10);
-  let correctAnswer = 'a';
+  let correctAnswer = '0';
 
   switch (symbol) {
     case '-':

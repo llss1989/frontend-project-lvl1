@@ -14,7 +14,7 @@ const getCleanProg = (start, step, lengthProg) => {
 
 const getDataForProgressionGame = () => {
   const textOfQuestion = `What number is missing in the progression?
-  Question:`;
+  Question`;
   const startProg = getRandomNumber(1, 10);
   const stepProg = getRandomNumber(1, 10);
   const valueHiddenCell = getRandomNumber(0, 9);
