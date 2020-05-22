@@ -1,54 +1,30 @@
 
-import readlineSync from 'readline-sync';
 import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
-
-const getProgression = () => {
-  const dirtyProg = [];
-  const cleanProg = [];
-  const step = getRandomNumber(1, 10);
-  const getHiddenCell = getRandomNumber(0, 9);
-  let currentValue = 0;
-  for (let i = 0; i < 10; i += 1) {
-    if (getHiddenCell === i) {
-      currentValue += step;
-      dirtyProg.push('..');
-      cleanProg.push(currentValue);
-    } else {
-      currentValue += step;
-      dirtyProg.push(currentValue);
-      cleanProg.push(currentValue);
-    }
+const getCleanProg = (start, step, lengthProg) => {
+  const prog = [];
+  let currCell = start;
+  for (let i = 0; i <= lengthProg; i += 1) {
+    currCell += step;
+    prog.push(currCell);
   }
-  return [dirtyProg, cleanProg];
+  return prog;
 };
 
-const getCorrectAnswer = (progressions) => {
-  const cleanProg = progressions[1];
-  const dirtyProg = progressions[0];
-  const diff = cleanProg[2] - cleanProg[1];
-  const size = cleanProg.length;
-  for (let i = 0; i < size; i += 1) {
-    if (dirtyProg[i] === '..') {
-      const start = cleanProg[0];
-      return start + diff * i;
-    }
-  }
-  return 'error';
-};
-
-const getArrForProgressionGame = (textOfQuestion) => {
-  const progressions = getProgression();
-  const dirtyProg = progressions[0];
-  const answer = Number(readlineSync.question(`${textOfQuestion}: ${dirtyProg}`));
-  const correctAnswer = getCorrectAnswer(progressions);
-  const resultOfAnswer = Number(answer) === correctAnswer ? 'Correct' : 'Wrong';
-  const resultsOfGame = [dirtyProg, answer, correctAnswer, resultOfAnswer];
-  return resultsOfGame;
+const getDataForProgressionGame = () => {
+  const startProg = getRandomNumber(1, 10);
+  const stepProg = getRandomNumber(1, 10);
+  const valueHiddenCell = getRandomNumber(0, 9);
+  const valueHidCellForMathOper = valueHiddenCell + 1;
+  const lengthProg = 9;
+  const progression = getCleanProg(startProg, stepProg, lengthProg);
+  const correctAnswer = String(startProg + stepProg * (valueHidCellForMathOper));
+  progression[valueHiddenCell] = '..';
+  return [progression, correctAnswer];
 };
 
 const questionForBrainProgression = `What number is missing in the progression?
 Question:`;
-const progressionGame = () => engine(getArrForProgressionGame, questionForBrainProgression);
+const progressionGame = () => engine(getDataForProgressionGame, questionForBrainProgression);
 export default progressionGame;

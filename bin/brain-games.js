@@ -3,4 +3,4 @@
 /* eslint-env es6 */
 import { hello } from '../src/hello';
 
-console.log(hello());
+hello();

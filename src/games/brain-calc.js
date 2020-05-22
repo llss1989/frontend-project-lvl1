@@ -3,12 +3,8 @@ import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const getDataForCalcGame = () => {
-  const dictionaryOfSymbols = {
-    1: '-',
-    2: '+',
-    3: '*',
-  };
-  const symbol = dictionaryOfSymbols[getRandomNumber(1, 3)];
+  const dictionaryOfSymbols = ['+', '-', '*'];
+  const symbol = dictionaryOfSymbols[getRandomNumber(0, 2)];
   const operand1 = getRandomNumber(1, 100);
   const operand2 = getRandomNumber(1, 100);
   const oper1ForMulti = getRandomNumber(1, 10);
