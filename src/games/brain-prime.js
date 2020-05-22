@@ -17,17 +17,15 @@ const isPrime = (num) => {
   return true;
 };
 
-const getArrForPrimeGame = () => {
+const getDataForPrime = () => {
   const question = getRandomNumber(1, 100);
-  // const answer = readlineSync.question(`${textOfQuestion}: ${question}`);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  // const resultOfAnswer = answer === correctAnswer ? 'Correct' : 'Wrong';
   const resultsOfGame = [question, correctAnswer];
   return resultsOfGame;
 };
 
-const textQuestionOfCalcGame = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+const textQuestionOfPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const primeGame = () => engine(getArrForPrimeGame, textQuestionOfCalcGame);
+const primeGame = () => engine(getDataForPrime, textQuestionOfPrimeGame);
 
 export default primeGame;

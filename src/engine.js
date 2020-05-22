@@ -13,7 +13,6 @@ const engine = (funcOfGame, textQuestionOfGame) => {
     const question = questionAndAnswer[0];
     const correctAnswer = questionAndAnswer[1];
     const answerUser = readlineSync.question(`${textQuestionOfGame}: ${question}`);
-    // const resultOfAnswer = questionAndAnswer[3];
     if (correctAnswer !== answerUser) {
       counter = 0;
       console.log(`${answerUser} is wrong answer ;(. Correct answer was ${correctAnswer}  
@@ -26,5 +25,3 @@ const engine = (funcOfGame, textQuestionOfGame) => {
   console.log(`Congratulations, ${name}!`);
 };
 export default engine;
-
-// const resultsOfGame = [question, answer, correctAnswer, resultOfAnswer];

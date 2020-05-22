@@ -1,9 +1,8 @@
 
-import readlineSync from 'readline-sync';
 import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
-const getRandomExpression = () => {
+const getDataForCalcGame = () => {
   const dictionaryOfSymbols = {
     1: '-',
     2: '+',
@@ -22,35 +21,24 @@ const getRandomExpression = () => {
   switch (symbol) {
     case '-':
       textOfExpAndCorrectAnswer.textOfExpression = `${operand1} - ${operand2}`;
-      textOfExpAndCorrectAnswer.correctAnswer = operand1 - operand2;
+      textOfExpAndCorrectAnswer.correctAnswer = String(operand1 - operand2);
       break;
     case '*':
       textOfExpAndCorrectAnswer.textOfExpression = `${oper1ForMulti} * ${oper2ForMulti}`;
-      textOfExpAndCorrectAnswer.correctAnswer = oper1ForMulti * oper2ForMulti;
+      textOfExpAndCorrectAnswer.correctAnswer = String(oper1ForMulti * oper2ForMulti);
       break;
     case '+':
       textOfExpAndCorrectAnswer.textOfExpression = `${operand1} + ${operand2}`;
-      textOfExpAndCorrectAnswer.correctAnswer = operand1 + operand2;
+      textOfExpAndCorrectAnswer.correctAnswer = String(operand1 + operand2);
       break;
       // no default
   }
   return Object.values(textOfExpAndCorrectAnswer);
 };
-const getArrForCalcGame = () => {
-  const question = getRandomExpression();
-  const textOfExpression = question[0];
-  // const answer = readlineSync.question(`${textOfQuestion}: ${textOfExpression}`);
-  const correctAnswer = question[1];
-  // const resultOfAnswer = Number(correctAnswer) === Number(answer) ? 'Correct' : 'Wrong';
-  const resultsOfGame = [textOfExpression, Number(answer), Number(correctAnswer), resultOfAnswer];
-  return resultsOfGame;
-};
 
 const textQuestionOfCalcGame = `What is the result of the expression?
 Question:`;
 
-const calcGame = () => engine(getArrForCalcGame, textQuestionOfCalcGame);
+const calcGame = () => engine(getDataForCalcGame, textQuestionOfCalcGame);
 
 export default calcGame;
-
-console.log(getRandomExpression());
