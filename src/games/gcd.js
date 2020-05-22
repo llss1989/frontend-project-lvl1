@@ -2,7 +2,7 @@
 import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
-const isDivisorNum = (n, div) => n % div === 0;
+
 const getDataForDivisorGame = () => {
   const textOfQuestion = `Find the greatest common divisor of given numbers.
   Question: `;
@@ -13,7 +13,9 @@ const getDataForDivisorGame = () => {
   let correctAnswer = 0;
   const beginOfNaturNum = 0;
   for (let i = smallerNum; i >= beginOfNaturNum; i -= 1) {
-    if (isDivisorNum(num1, i) && isDivisorNum(num2, i)) {
+    const isDivisorNum1 = num1 % i === 0;
+    const isDivisorNum2 = num2 % i === 0;
+    if (isDivisorNum1 && isDivisorNum2) {
       correctAnswer = String(i);
       break;
     }
