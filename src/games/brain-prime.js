@@ -1,5 +1,4 @@
 
-import readlineSync from 'readline-sync';
 import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
@@ -18,12 +17,12 @@ const isPrime = (num) => {
   return true;
 };
 
-const getArrForPrimeGame = (textOfQuestion) => {
+const getArrForPrimeGame = () => {
   const question = getRandomNumber(1, 100);
-  const answer = readlineSync.question(`${textOfQuestion}: ${question}`);
+  // const answer = readlineSync.question(`${textOfQuestion}: ${question}`);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  const resultOfAnswer = answer === correctAnswer ? 'Correct' : 'Wrong';
-  const resultsOfGame = [question, answer, correctAnswer, resultOfAnswer];
+  // const resultOfAnswer = answer === correctAnswer ? 'Correct' : 'Wrong';
+  const resultsOfGame = [question, correctAnswer];
   return resultsOfGame;
 };
 

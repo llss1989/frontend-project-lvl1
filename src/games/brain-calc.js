@@ -36,13 +36,13 @@ const getRandomExpression = () => {
   }
   return Object.values(textOfExpAndCorrectAnswer);
 };
-const getArrForCalcGame = (textOfQuestion) => {
+const getArrForCalcGame = () => {
   const question = getRandomExpression();
   const textOfExpression = question[0];
-  const answer = readlineSync.question(`${textOfQuestion}: ${textOfExpression}`);
+  // const answer = readlineSync.question(`${textOfQuestion}: ${textOfExpression}`);
   const correctAnswer = question[1];
-  const resultOfAnswer = Number(correctAnswer) === Number(answer) ? 'Correct' : 'Wrong';
-  const resultsOfGame = [correctAnswer, Number(answer), Number(correctAnswer), resultOfAnswer];
+  // const resultOfAnswer = Number(correctAnswer) === Number(answer) ? 'Correct' : 'Wrong';
+  const resultsOfGame = [textOfExpression, Number(answer), Number(correctAnswer), resultOfAnswer];
   return resultsOfGame;
 };
 
@@ -52,3 +52,5 @@ Question:`;
 const calcGame = () => engine(getArrForCalcGame, textQuestionOfCalcGame);
 
 export default calcGame;
+
+console.log(getRandomExpression());

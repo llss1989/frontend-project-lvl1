@@ -15,6 +15,8 @@ gcd:
 progression:
 	node bin/brain-progression-game.js
 test:
-	node bin/src/games/brain-calc.js
+	node src/games/brain-calc.js
+proverka:
+	node src/engine.js
 prime:
 	node bin/brain-prime-game.js

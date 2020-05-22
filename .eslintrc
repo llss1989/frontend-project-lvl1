@@ -5,7 +5,9 @@
     },
     "rules": {
         "no-console": "off",
-        "import/extensions": "warn"
+        "import/extensions": "warn",
+        "no-unused-vars": "warn",
+        "no-undef": "warn"
     },
     "extends": [
         "airbnb/base",

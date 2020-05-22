@@ -9,15 +9,16 @@ const engine = (funcOfGame, textQuestionOfGame) => {
 
   let counter = 0;
   while (counter < 3) {
-    const questionAndAnswer = funcOfGame(textQuestionOfGame);
-    const answer = questionAndAnswer[1];
-    const correctAnswer = questionAndAnswer[2];
-    const resultOfAnswer = questionAndAnswer[3];
-    if (resultOfAnswer === 'Wrong') {
+    const questionAndAnswer = funcOfGame();
+    const question = questionAndAnswer[0];
+    const correctAnswer = questionAndAnswer[1];
+    const answerUser = readlineSync.question(`${textQuestionOfGame}: ${question}`);
+    // const resultOfAnswer = questionAndAnswer[3];
+    if (correctAnswer !== answerUser) {
       counter = 0;
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}  
+      console.log(`${answerUser} is wrong answer ;(. Correct answer was ${correctAnswer}  
       Let's try again, ${name}!`);
-    } else if (resultOfAnswer === 'Correct') {
+    } else if (correctAnswer === answerUser) {
       counter += 1;
       console.log('Correct!');
     }
