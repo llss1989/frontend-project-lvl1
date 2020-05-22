@@ -18,14 +18,14 @@ const isPrime = (num) => {
 };
 
 const getDataForPrime = () => {
+  const textOfQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no"';
   const question = getRandomNumber(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  const resultsOfGame = [question, correctAnswer];
+  const resultsOfGame = [question, correctAnswer, textOfQuestion];
   return resultsOfGame;
 };
 
-const textQuestionOfPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const primeGame = () => engine(getDataForPrime, textQuestionOfPrimeGame);
+const primeGame = () => engine(getDataForPrime);
 
 export default primeGame;

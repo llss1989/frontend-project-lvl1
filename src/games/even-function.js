@@ -6,11 +6,11 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const getDataForEvenGame = () => {
   const question = getRandomNumber(1, 100);
-  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
-  const resultsOfGame = [question, correctAnswer];
-  return resultsOfGame;
-};
-const questionForBrainEven = `Answer "yes" if the number is even, otherwise answer "no"
+  const textOfQuestion = `Answer "yes" if the number is even, otherwise answer "no"
 Question`;
-const evenGame = () => engine(getDataForEvenGame, questionForBrainEven);
+  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+  return [question, correctAnswer, textOfQuestion];
+};
+
+const evenGame = () => engine(getDataForEvenGame);
 export default evenGame;
