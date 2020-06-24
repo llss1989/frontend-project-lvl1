@@ -1,7 +1,5 @@
-
 import engine from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
-
 
 const isPrime = (num) => {
   if (num < 2) {
