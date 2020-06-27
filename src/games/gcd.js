@@ -1,28 +1,26 @@
-
-import engine from '../engine.js';
+import runTheBrainGame from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
-
-const getDataForDivisorGame = () => {
-  const textOfQuestion = `Find the greatest common divisor of given numbers.
-  Question`;
-  const question = [getRandomNumber(1, 100), getRandomNumber(1, 100)];
-  const num1 = question[0];
-  const num2 = question[1];
-  const smallerNum = num1 > num2 ? num2 : num1;
-  let correctAnswer = 0;
-  const beginOfNaturNum = 0;
-  for (let i = smallerNum; i >= beginOfNaturNum; i -= 1) {
-    const isDivisorNum1 = num1 % i === 0;
-    const isDivisorNum2 = num2 % i === 0;
-    if (isDivisorNum1 && isDivisorNum2) {
-      correctAnswer = String(i);
-      break;
+const findGcd = (number1, number2) => {
+  let [num1, num2] = [number1, number2];
+  while (num1 !== num2) {
+    if (num1 > num2) {
+      num1 -= num2;
+    } else {
+      num2 -= num1;
     }
   }
-  return [question, correctAnswer, textOfQuestion];
+  return num1;
 };
 
+const getDataForDivisorGame = () => {
+  const question = [getRandomNumber(1, 100), getRandomNumber(1, 100)];
+  const [num1, num2] = question;
+  const correctAnswer = String(findGcd(num1, num2));
+  const gameData = [question, correctAnswer];
+  return gameData;
+};
 
-const gcdGame = () => engine(getDataForDivisorGame);
+const task = 'Find the greatest common divisor of given numbers.';
+const gcdGame = () => runTheBrainGame(getDataForDivisorGame, task);
 export default gcdGame;

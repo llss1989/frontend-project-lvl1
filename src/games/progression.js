@@ -1,31 +1,26 @@
-
-import engine from '../engine.js';
+import runTheBrainGame from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
-const getCleanProg = (start, step, lengthProg) => {
+const getCleanProg = (step, lengthProg) => {
   const prog = [];
-  let currCell = start;
-  for (let i = 0; i <= lengthProg; i += 1) {
-    currCell += step;
-    prog.push(currCell);
+  const size = lengthProg * step;
+  for (let i = 0; i < size; i += step) {
+    prog.push(i);
   }
   return prog;
 };
 
 const getDataForProgressionGame = () => {
-  const textOfQuestion = `What number is missing in the progression?
-  Question`;
-  const startProg = getRandomNumber(1, 10);
   const stepProg = getRandomNumber(1, 10);
-  const valueHiddenCell = getRandomNumber(0, 9);
-  const valueHidCellForMathOper = valueHiddenCell + 1;
-  const lengthProg = 9;
-  const progression = getCleanProg(startProg, stepProg, lengthProg);
-  const correctAnswer = String(startProg + stepProg * (valueHidCellForMathOper));
+  const lengthProg = 10;
+  const valueHiddenCell = getRandomNumber(0, lengthProg - 1);
+  const progression = getCleanProg(stepProg, lengthProg);
+  const correctAnswer = String(stepProg * valueHiddenCell);
   progression[valueHiddenCell] = '..';
-  return [progression, correctAnswer, textOfQuestion];
+  const gameData = [progression, correctAnswer];
+  return gameData;
 };
 
-
-const progressionGame = () => engine(getDataForProgressionGame);
+const task = 'What number is missing in the progression?';
+const progressionGame = () => runTheBrainGame(getDataForProgressionGame, task);
 export default progressionGame;
