@@ -22,8 +22,7 @@ const getDataForCalcGame = () => {
       // no default
   }
   const question = operator === '*' ? `${oper1ForMulti} ${operator} ${oper2ForMulti}` : `${operand1} ${operator} ${operand2}`;
-  const gameData = [question, String(correctAnswer)];
-  return gameData;
+  return [question, String(correctAnswer)];
 };
 
 const task = 'What is the result of the expression?';

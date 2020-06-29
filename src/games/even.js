@@ -5,8 +5,7 @@ import getRandomNumber from '../getRandomNumber.js';
 const getDataForEvenGame = () => {
   const question = getRandomNumber(1, 100);
   const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
-  const gameData = [question, correctAnswer];
-  return gameData;
+  return [question, correctAnswer];
 };
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no"';

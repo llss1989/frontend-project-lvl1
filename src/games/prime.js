@@ -18,11 +18,9 @@ const isPrime = (num) => {
 const getDataForPrime = () => {
   const question = getRandomNumber(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  const gameData = [question, correctAnswer];
-  return gameData;
+  return [question, correctAnswer];
 };
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 const primeGame = () => runTheBrainGame(getDataForPrime, task);
-
 export default primeGame;

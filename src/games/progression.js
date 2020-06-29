@@ -14,11 +14,10 @@ const getDataForProgressionGame = () => {
   const stepProg = getRandomNumber(1, 10);
   const lengthProg = 10;
   const valueHiddenCell = getRandomNumber(0, lengthProg - 1);
-  const progression = getCleanProg(stepProg, lengthProg);
+  const question = getCleanProg(stepProg, lengthProg);
   const correctAnswer = String(stepProg * valueHiddenCell);
-  progression[valueHiddenCell] = '..';
-  const gameData = [progression, correctAnswer];
-  return gameData;
+  question[valueHiddenCell] = '..';
+  return [question, correctAnswer];
 };
 
 const task = 'What number is missing in the progression?';
