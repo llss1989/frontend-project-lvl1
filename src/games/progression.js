@@ -3,19 +3,20 @@ import getRandomNumber from '../getRandomNumber.js';
 
 const getProgression = (step, lengthProgression) => {
   const prog = [];
-  const size = lengthProgression * step;
-  for (let i = 0; i < size; i += step) {
-    prog.push(i);
+  let currentValueOfProgression = 0;
+  for (let i = 0; i < lengthProgression; i += 1) {
+    prog.push(currentValueOfProgression);
+    currentValueOfProgression += step;
   }
   return prog;
 };
 
 const getDataForProgressionGame = () => {
-  const stepProg = getRandomNumber(1, 10);
+  const stepProgression = getRandomNumber(1, 10);
   const lengthProgression = 10;
   const valueHiddenCell = getRandomNumber(0, lengthProgression - 1);
-  const question = getProgression(stepProg, lengthProgression);
-  const correctAnswer = String(stepProg * valueHiddenCell);
+  const question = getProgression(stepProgression, lengthProgression);
+  const correctAnswer = String(stepProgression * valueHiddenCell);
   question[valueHiddenCell] = '..';
   return [question, correctAnswer];
 };

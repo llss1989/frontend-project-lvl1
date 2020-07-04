@@ -10,23 +10,26 @@ How to install and use brain-games?:
     After installing the project files on your computer, use the command "make install"
 
 
-How play Brain-calc-game? About this looking in asciinema:
+How play Brain-calc-game?:
     
     To start Brain-calc-game, use the command "make calc". 
 
 
-How play Brain-nod-game? About this looking in asciinema:
+How play Brain-nod-game?:
     
      To start Brain-nod-game, use the command "make gcd". 
 
 
-How play Brain-progression-game? About this looking in asciinema:
+How play Brain-progression-game?:
     
     To start Brain-progression-game, use the command "make progression". 
 
 
-How play Brain-prime-game? About this looking in asciinema:
+How play Brain-prime-game?:
     
     To start Brain-prime-game, use the command "make prime". 
 
+How play Brain-even-game?:
+    
+    To start Brain-prime-game, use the command "make even".
 
