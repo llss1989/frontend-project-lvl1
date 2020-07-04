@@ -1,5 +1,5 @@
 /* eslint-env es6 */
-import runTheBrainGame from '../engine.js';
+import runGame from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const getDataForEvenGame = () => {
@@ -9,5 +9,5 @@ const getDataForEvenGame = () => {
 };
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no"';
-const evenGame = () => runTheBrainGame(getDataForEvenGame, task);
+const evenGame = () => runGame(getDataForEvenGame, task);
 export default evenGame;

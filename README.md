@@ -3,27 +3,30 @@
 Status of Last Deployment:<br>
 <img src="https://github.com/llss1989/frontend-project-lvl1/workflows/My-GitHubActions-Basics/badge.svg?branch=master"><br>
 
-How to install and use brain-games? About this looking in asciinema:
+This project contains five console games.  For convenient operation, you can use our makefile.
+
+How to install and use brain-games?:
     
-    https://asciinema.org/a/PlXKyllKIemACwWKE6vfejp5X
+    After installing the project files on your computer, use the command "make install"
 
 
 How play Brain-calc-game? About this looking in asciinema:
     
-    https://asciinema.org/a/9EdlZ7ifykiQfWt8sKN5J3n9x
+    To start Brain-calc-game, use the command "make calc". 
 
 
 How play Brain-nod-game? About this looking in asciinema:
     
-    https://asciinema.org/a/j3eAw9Vbn8OoDkFVavCooMpn6
+     To start Brain-nod-game, use the command "make gcd". 
 
 
 How play Brain-progression-game? About this looking in asciinema:
     
-    https://asciinema.org/a/t83pAfe3rBsUG3wjrbgmHfrdG
+    To start Brain-progression-game, use the command "make progression". 
+
 
 How play Brain-prime-game? About this looking in asciinema:
     
-    https://asciinema.org/a/KPxelDCs3vB5ehyA7BG5IJ8es
+    To start Brain-prime-game, use the command "make prime". 
 
 

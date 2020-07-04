@@ -1,14 +1,14 @@
-import runTheBrainGame from '../engine.js';
+import runGame from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const getDataForCalcGame = () => {
   const operators = ['+', '-', '*'];
-  const operator = operators[getRandomNumber(0, 2)];
+  const operator = operators[getRandomNumber(0, operators.length - 1)];
   const operand1 = getRandomNumber(1, 100);
   const operand2 = getRandomNumber(1, 100);
   const oper1ForMulti = getRandomNumber(1, 10);
   const oper2ForMulti = getRandomNumber(1, 10);
-  let correctAnswer = null;
+  let correctAnswer;
   switch (operator) {
     case '-':
       correctAnswer = operand1 - operand2;
@@ -26,5 +26,5 @@ const getDataForCalcGame = () => {
 };
 
 const task = 'What is the result of the expression?';
-const calcGame = () => runTheBrainGame(getDataForCalcGame, task);
+const calcGame = () => runGame(getDataForCalcGame, task);
 export default calcGame;
