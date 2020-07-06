@@ -4,9 +4,10 @@ import getRandomNumber from '../getRandomNumber.js';
 const getProgression = (step, lengthProgression) => {
   const prog = [];
   let currentValueOfProgression = 0;
-  for (let i = 0; i < lengthProgression; i += 1) {
+  for (let progressionMember = 1; progressionMember < lengthProgression + 1;
+    progressionMember += 1) {
+    currentValueOfProgression = (progressionMember - 1) * step;
     prog.push(currentValueOfProgression);
-    currentValueOfProgression += step;
   }
   return prog;
 };
@@ -14,7 +15,7 @@ const getProgression = (step, lengthProgression) => {
 const getDataForProgressionGame = () => {
   const stepProgression = getRandomNumber(1, 10);
   const lengthProgression = 10;
-  const valueHiddenCell = getRandomNumber(0, lengthProgression - 1);
+  const valueHiddenCell = getRandomNumber(1, lengthProgression);
   const question = getProgression(stepProgression, lengthProgression);
   const correctAnswer = String(stepProgression * valueHiddenCell);
   question[valueHiddenCell] = '..';

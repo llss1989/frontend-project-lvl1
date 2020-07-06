@@ -33,3 +33,6 @@ How play Brain-even-game?:
     
     To start Brain-prime-game, use the command "make even".
 
+
+*All commands use in the project folder.
+
