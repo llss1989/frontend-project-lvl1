@@ -1,22 +1,22 @@
 install:
 	npm install
 start:
-	node bin/brain-games.js
+	node bin/hello.js
 publish:
 	npm publish --dry-run
 lint:
 	npx eslint .
 even:
-	node bin/brain-even.js
+	node bin/even.js
 calc:
-	node bin/brain-calc-game.js 
+	node bin/calc-game.js 
 gcd:
-	node bin/brain-gcd-game.js
+	node bin/gcd-game.js
 progression:
-	node bin/brain-progression-game.js
+	node bin/progression-game.js
 test:
-	node src/games/brain-calc.js
+	node src/games/calc.js
 proverka:
 	node src/engine.js
 prime:
-	node bin/brain-prime-game.js
+	node bin/prime-game.js

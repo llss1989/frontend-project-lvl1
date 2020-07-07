@@ -4,9 +4,8 @@ import getRandomNumber from '../getRandomNumber.js';
 const getProgression = (step, lengthProgression) => {
   const prog = [];
   let currentValueOfProgression = 0;
-  for (let progressionMember = 1; progressionMember < lengthProgression + 1;
-    progressionMember += 1) {
-    currentValueOfProgression = (progressionMember - 1) * step;
+  for (let i = 1; i < lengthProgression + 1; i += 1) {
+    currentValueOfProgression = (i - 1) * step;
     prog.push(currentValueOfProgression);
   }
   return prog;
