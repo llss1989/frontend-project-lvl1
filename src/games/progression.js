@@ -1,11 +1,11 @@
 import runGame from '../engine.js';
 import getRandomNumber from '../getRandomNumber.js';
 
-const getProgression = (step, lengthProgression) => {
+const getProgression = (startingNumber, step, lengthProgression) => {
   const prog = [];
-  let currentValueOfProgression = 0;
-  for (let i = 1; i < lengthProgression + 1; i += 1) {
-    currentValueOfProgression = (i - 1) * step;
+
+  for (let i = 1; i <= lengthProgression; i += 1) {
+    const currentValueOfProgression = startingNumber + (i - 1) * step;
     prog.push(currentValueOfProgression);
   }
   return prog;
@@ -15,8 +15,9 @@ const getDataForProgressionGame = () => {
   const stepProgression = getRandomNumber(1, 10);
   const lengthProgression = 10;
   const valueHiddenCell = getRandomNumber(1, lengthProgression);
-  const question = getProgression(stepProgression, lengthProgression);
-  const correctAnswer = String(stepProgression * valueHiddenCell);
+  const startingNumber = getRandomNumber(0, 10);
+  const question = getProgression(startingNumber, stepProgression, lengthProgression);
+  const correctAnswer = String(startingNumber + (stepProgression * valueHiddenCell));
   question[valueHiddenCell] = '..';
   return [question, correctAnswer];
 };

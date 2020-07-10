@@ -9,11 +9,10 @@ const findGcd = (a, b) => {
 };
 
 const getDataForDivisorGame = () => {
-  const question = [getRandomNumber(1, 100), getRandomNumber(1, 100)];
-  const num1 = question[0];
-  const num2 = question[1];
+  const num1 = getRandomNumber(1, 100);
+  const num2 = getRandomNumber(1, 100);
   const correctAnswer = String(findGcd(num1, num2));
-  return [question, correctAnswer];
+  return [[num1, num2], correctAnswer];
 };
 
 const task = 'Find the greatest common divisor of given numbers.';
