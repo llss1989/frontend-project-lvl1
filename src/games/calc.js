@@ -1,5 +1,5 @@
 import runGame from '../engine.js';
-import getRandomNumber from '../getRandomNumber.js';
+import getRandomNumber from '../random.js';
 
 const getDataForCalcGame = () => {
   const operators = ['+', '-', '*'];

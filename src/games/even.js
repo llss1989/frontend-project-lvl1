@@ -1,6 +1,6 @@
 /* eslint-env es6 */
 import runGame from '../engine.js';
-import getRandomNumber from '../getRandomNumber.js';
+import getRandomNumber from '../random.js';
 
 const getDataForEvenGame = () => {
   const question = getRandomNumber(1, 100);

@@ -13,10 +13,9 @@ const runGame = (getDataGame, task) => {
       console.log(`${answerUser} is wrong answer ;(. Correct answer was ${correctAnswer}`);
       console.log(`Let's try again, ${name}!`);
       return;
-    } if (correctAnswer === answerUser) {
-      counter += 1;
-      console.log('Correct!');
     }
+    counter += 1;
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${name}!`);
 };
